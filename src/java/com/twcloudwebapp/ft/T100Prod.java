@@ -608,7 +608,7 @@ public class T100Prod {
                 + "SELECT * FROM DBA_VIEWS a "
                 + "WHERE OWNER='DSDATA' "
                 + "ORDER BY VIEW_NAME";
-        return this.getHtmlTable(sql);
+        return this.getHtmlTable(sql)+sql;
 //        int cnt = 9999;
 //        String str = "";
 //        try {

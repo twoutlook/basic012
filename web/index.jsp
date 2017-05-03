@@ -34,7 +34,9 @@ and open the template in the editor.
         </h1>
         
     
+          <%=t100.getA開新窗("http://10.10.1.80:8080/ft/", "部署在局網的服務器")%>&nbsp;&nbsp;
           <%=t100.getA開新窗("db.jsp", "數據庫工具")%>&nbsp;&nbsp;
+          <!--http://10.10.1.80:8080/ft/-->
         
         <br>
         
@@ -293,7 +295,7 @@ and open the template in the editor.
                     (10a)
                 </th>
                 <td>
-                    <a href="basic010a.jsp"> 设备</a>
+                    <a href="basic010a.jsp"> 机器</a>
                 </td>
                 <td>
                     <%=t100.getRecordCnt(basic.SQL010a)%>

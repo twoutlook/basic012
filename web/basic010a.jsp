@@ -14,7 +14,7 @@
          <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
-        <h1>(10a)设备</h1><basic:tag_index001/>
+        <h1>(10a)机器</h1><basic:tag_index001/>
          <%
             Basic basic = new Basic();
             String strHeader="xxx, yyy, zzz";

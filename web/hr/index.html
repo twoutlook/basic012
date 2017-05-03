@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--
+To change this license header， choose License Headers in Project Properties.
+To change this template file， choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width， initial-scale=1.0">
+    </head>
+    <body>
+        <!--<div>TODO write content</div>-->
+        <h2>富鈦人事系統整合</h2>
+        <hr>
+        <ul>
+            <li>會議時間地點︰2017-04-27 富鈦105會議室</li>
+            <li>主要參與人員︰
+                <ul>
+                    <li>同鑫昆山公司 --- 祝培华，电话：13913538371，邮箱：happyzph@126.com</li>
+                    <li>鼎捷 --- 楊小兵，电话：18817323349，邮箱：yangxb@digiwin.biz                  </li>
+                    <li>富鈦 --- Mark陳炳陵，电话：17715165707，邮箱：mark.chen@fulltech-metal.com</li>
+
+
+                </ul>
+
+            </li>
+            <li>會議內容知會人員︰
+                <ul>
+                    <li>同鑫昆山公司 --- 高新宇，电话：15950936379，邮箱：xy601620@163.com                </li>
+                    <li>鼎捷 --- 庞科伟</li>
+                    <li>富鈦 --- 吳楠，Bonze范胜鵬，黃叶峰，李晓凤，陈先明</li>
+
+
+                </ul>
+
+            </li>
+
+        </ul>
+        <hr>
+        <ul>
+            <li>會議中大家同意
+                <ol>
+                    <li>同鑫在富鈦局網內，提供數據庫訪問參數和帳密，使用一個唯讀(READ ONLY)視圖(VIEW)當做中間表，按鼎捷要求的格式，提供即時數據。</li>
+                    <li>鼎捷需提供基礎對照表。</li>
+                    <li>鼎捷將由同鑫提供的中間表，調試每天自動運行一次的腳本，並允許人工觸發，可以自動更新T100員工和用戶的信息，以每1000筆為單位，可接受運行時間為10分鐘。
+                        <ul>
+                            <li>由於鼎捷T100和BPM集成規格的緣故，必需同時維護T100員工和用戶的信息，儘管大多數員工並不是真正的T100用戶。
+
+                            </li>
+                            <li>項目內不包括T100自動同步到BPM。
+                                <ul>
+                                    <li>BPM顧問已有設罝，由富鈦IT人員自行操作。</li>
+                                </ul>   
+                            </li>
+                            <li>項目內不包括T100用戶的權限設置。 <ul>
+                                    <li>由富鈦IT人員自行操作。</li>
+                                </ul>   
+                            </li>
+                        </ul>   
+                    </li>
+                </ol>   
+            </li>
+        </ul>
+
+        <ul>
+            <li>富鈦居中協調和要求事項
+                <ol>
+                    <li>鼎捷需先在富鈦局網內，提供數據庫訪問參數和帳密，使用唯讀(READ ONLY)視圖(VIEW)，欄位名稱和中文說明如下︰
+                        <ul>
+                            <li>HR001_DEPT 部門編碼對照表 ︰
+                                <ul>
+                                    <li>DEPT_ID 部門編碼</li>
+                                    <li>DEPT_NAME 部門</li>
+                                </ul>   
+                            </li>
+                            <li>HR001_JOB 職稱編碼對照表 
+                                <ul>
+                                    <li>JOB_ID 職稱編碼</li>
+                                    <li>JOB_NAME 職稱</li>
+                                </ul>   
+
+                            </li>
+                            <li>HR001_LEVEL 審核層級編碼對照表 
+
+                                <ul>
+                                    <li>LEVEL_ID 審核層級編碼</li>
+                                    <li>LEVEL_NAME 審核層級</li>
+                                </ul>   
+
+                            </li>
+                            <li>如同同鑫的中間表，規格詳如後述。視圖名稱為HR001_EMPE。 
+                                <ul>
+                                    <li>初次提供時，HIRE_DATE 到廠日期，LEAVE_DATE 離職日期，兩欄位均為空。</li>
+                                    <li>等第一次按同鑫中間表更新後，HIRE_DATE 到廠日期，LEAVE_DATE 離職日期，按同步後顯示。</li>
+                                    
+
+                                </ul> 
+                            </li>
+                        </ul>   
+
+
+                    </li>
+                    <li>同鑫需在鼎捷提供基礎對照表後，調整目前HR系統，或新增映對的方式，方便富鈦人事部門人員以新核定的部門職稱等，來操作和維護。</li>
+                    <li>同鑫所提供的中間表規格如下，所有欄位均為文本格式，到廠日期和離職日期使用ISO 8601日期格式，例如2017-05-03，欄位名稱和中文說明如後︰
+                        <ul>
+                            <li> EMPE_ID 員工工號 (PRIMARY KEY 欄位)
+                               <ul>
+                                    <li>只限正式員工工號和試用員工工號，不含臨時工工號。</li>
+                                    <li>試用員工轉正後工號不得變更。</li>
+                                    
+                                </ul>
+                            </li>
+                            <li>EMPE_LASTNAME 員工姓</li>
+                            <li>EMPE_FIRSTNAME 員工名</li>
+                            <li>DEPT_ID 部門編碼</li>
+                            <li> DEPT_NAME 部門</li>
+                            <li>JOB_ID 職稱編碼</li>
+                            <li> JOB_NAME 職稱</li>
+                            <li>LEVEL_ID 審核層級編碼</li>
+                            <li> LEVEL_NAME 審核層級</li>
+                            <li>SUP_ID 直屬主管工號</li>
+                            <li> SUP_NAME 直屬主管姓名</li>
+                            <li>HIRE_DATE 到廠日期</li>
+                            <li>LEAVE_DATE 離職日期︰
+                                <ul>
+                                    <li>預計2017-06-01本項目開始正式運行，凡離職日期在2017-06-01之前的員工信息不出現在本中間表。</li>
+                                    <li>本項目正常運行六個月後再行討論是否設定離職日期超過某天數後不在中間表顯示。</li>
+                                    
+                                </ul>
+                            
+                            
+                            </li>
+                            
+                        </ul>   
+                    </li>
+                    <li>鼎捷仍需提供如同同鑫的中間表，方便三方驗證。
+                        <ul>
+                            <li>請確認並標示，HIRE_DATE 到廠日期，LEAVE_DATE 離職日期，兩個欄位所在的表單。因為在員工的運行程序裡，我們看不到相關信息。</li>
+                        </ul>   
+                    </li>
+                    <li>鼎捷需以郵件方式(如同目前VM每日自動備份後由系統發出)，通知指定郵箱，當次更新的內容，基礎格式如後︰
+                        <ul>
+                            <li>  YYYY-MM-DD 共新增員工 xxx 筆 修改 xxx 筆  </li>
+                            <li>新增 xxx 筆 (新增一員員工為一筆)
+                                <ul>
+                                    <li>  新增 1. (該筆的所有信息)  </li>
+                                    <li>  新增 2. (該筆的所有信息)  </li>
+                                    <li>  新增 3. (該筆的所有信息)  </li>
+                                    <li>  ...</li>
+                                </ul>   
+                            </li>
+                            <li>修改 xxx 筆(修改任一欄位為一筆)
+                                <ul>
+                                    <li>   修改 1. EMPE_ID，欄位名 AAA 修改為 BBB   </li>
+                                    <li>   修改 2. EMPE_ID，欄位名 AAA 修改為 BBB    </li>
+                                    <li>   修改 3. EMPE_ID，欄位名 AAA 修改為 BBB    </li>
+                                    <li>  ...</li>
+
+                                </ul>   
+                            </li>
+                            <li>  YYYY-MM-DD 共新增同戶 xxx 筆 修改 xxx 筆(細項如上)  </li>
+                        </ul>  
+                    </li>
+                </ol>
+
+        </ul>   
+
+
+
+
+    </body>
+</html>
